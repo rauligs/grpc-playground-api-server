@@ -11,11 +11,10 @@ import javax.inject.Inject;
 class GrpcPlaygroundApiServerTest {
 
     @Inject
-    EmbeddedApplication<?> application;
+    private EmbeddedApplication<?> application;
 
     @Test
-    void testItWorks() {
+    void isRunning_shouldReturnTrue_whenApplicationStarts() {
         Assertions.assertTrue(application.isRunning());
     }
-
 }
