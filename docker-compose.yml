@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  api:
+    image: "grpc-playground-api-server:${PLAYGROUND_API_VERSION:-latest}"
+    hostname: 'localhost'
+    ports:
+      - "50051:50051"
+    restart: unless-stopped

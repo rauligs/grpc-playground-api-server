@@ -20,5 +20,6 @@
 - [gRPC example in Java](https://github.com/micronaut-projects/micronaut-grpc/tree/master/examples/hello-world-java)
 
 ### General gRPC
+- [Basics](https://grpc.io/docs/what-is-grpc/core-concepts/)
 - [Blog - Libraries for gRPC Services](https://www.bugsnag.com/blog/libraries-for-grpc-services)
 - [Blog - How Namely builds gRPC Services](https://medium.com/namely-labs/how-we-build-grpc-services-at-namely-52a3ae9e7c35)

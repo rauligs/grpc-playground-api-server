@@ -26,6 +26,8 @@ class GrpcPlaygroundApiServerTest {
 
     @Test
     void health_shouldReturnStatusIsUp () {
+        // TODO How to test it standalone without proto generated health indicator
+        //  - Documentation is incomplete. It seems a custom proto health is needed
         GrpcServerHealthIndicator healthIndicator = application.getApplicationContext().getBean(GrpcServerHealthIndicator.class);
         BlockingFirstSubscriber<HealthResult> subscriber = new BlockingFirstSubscriber<>();
         healthIndicator.getResult().subscribe(subscriber);
