@@ -21,7 +21,6 @@ micronaut {
 
 dependencies {
     implementation("io.micronaut:micronaut-runtime")
-    implementation("io.micronaut:micronaut-management")
     implementation("io.micronaut.grpc:micronaut-grpc-runtime")
     implementation("javax.annotation:javax.annotation-api")
     implementation("io.micronaut:micronaut-validation")
@@ -29,16 +28,14 @@ dependencies {
     testImplementation("io.micronaut:micronaut-http-client")
 }
 
-
 application {
     mainClass.set("com.playground.api.Application")
 }
+
 java {
     sourceCompatibility = JavaVersion.toVersion("11")
     targetCompatibility = JavaVersion.toVersion("11")
 }
-
-
 
 sourceSets {
     main {
@@ -57,4 +54,11 @@ protobuf {
     generateProtoTasks {
         all()*.plugins { grpc {} }
     }
+}
+
+dockerfileNative {
+    instruction """RUN GRPC_HEALTH_PROBE_VERSION=v0.4.1 && \\
+    wget -qO/bin/grpc_health_probe https://github.com/grpc-ecosystem/grpc-health-probe/releases/download/\${GRPC_HEALTH_PROBE_VERSION}/grpc_health_probe-linux-amd64 && \\
+    chmod +x /bin/grpc_health_probe"""
+    instruction """HEALTHCHECK CMD /bin/grpc_health_probe -addr 127.0.0.1:50051"""
 }
