@@ -1,5 +1,8 @@
-package com.playground.api;
+package com.playground.api.endpoint;
 
+import com.playground.api.GreetingReply;
+import com.playground.api.GreetingRequest;
+import com.playground.api.GreetingServerServiceGrpc;
 import io.grpc.stub.StreamObserver;
 
 import javax.inject.Singleton;

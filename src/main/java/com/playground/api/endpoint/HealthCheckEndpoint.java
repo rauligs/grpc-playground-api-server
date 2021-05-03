@@ -1,4 +1,4 @@
-package com.playground.api;
+package com.playground.api.endpoint;
 
 import grpc.health.v1.HealthCheck;
 import grpc.health.v1.HealthCheck.HealthCheckResponse;
