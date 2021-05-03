@@ -29,7 +29,7 @@ class GrpcPlaygroundApiServiceTest {
 }
 
 @Factory
-class Clients {
+class GrpcPlaygroundApiServiceClient {
     @Bean
     GrpcPlaygroundApiServerServiceGrpc.GrpcPlaygroundApiServerServiceBlockingStub blockingStub(
         @GrpcChannel(GrpcServerChannel.NAME) ManagedChannel channel) {
