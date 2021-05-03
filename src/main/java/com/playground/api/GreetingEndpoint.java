@@ -5,7 +5,7 @@ import io.grpc.stub.StreamObserver;
 import javax.inject.Singleton;
 
 @Singleton
-public class GrpcPlaygroundApiEndpoint extends GreetingServerServiceGrpc.GreetingServerServiceImplBase {
+public class GreetingEndpoint extends GreetingServerServiceGrpc.GreetingServerServiceImplBase {
 
     @Override
     public void send(GreetingRequest request, StreamObserver<GreetingReply> responseObserver) {
