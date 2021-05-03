@@ -21,5 +21,6 @@
 
 ### General gRPC
 - [Basics](https://grpc.io/docs/what-is-grpc/core-concepts/)
+- [Curated list of resources](https://github.com/grpc-ecosystem/awesome-grpc)
 - [Blog - Libraries for gRPC Services](https://www.bugsnag.com/blog/libraries-for-grpc-services)
 - [Blog - How Namely builds gRPC Services](https://medium.com/namely-labs/how-we-build-grpc-services-at-namely-52a3ae9e7c35)
