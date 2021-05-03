@@ -23,10 +23,18 @@
 - [Graal - Micronaut Gradle Plugin](https://github.com/micronaut-projects/micronaut-gradle-plugin)
 - [gRPC example in Java](https://github.com/micronaut-projects/micronaut-grpc/tree/master/examples/hello-world-java)
 
-### General gRPC
+### gRPC
+#### General
 - [Basics](https://grpc.io/docs/what-is-grpc/core-concepts/)
 - [Curated list of resources](https://github.com/grpc-ecosystem/awesome-grpc)
+
+#### Clean gRPC
+- [Official Style Guide](https://developers.google.com/protocol-buffers/docs/style)
+
+#### Health Check
 - [gRPC Health Checking](https://github.com/grpc/grpc/blob/master/doc/health-checking.md) to enable [grpc-health-probe](https://github.com/grpc-ecosystem/grpc-health-probe) 
 - [Implementing health checks in gRPC containers (Kubernetes)](https://medium.com/@github.gkarthiks/implementing-healthchecks-in-grpc-containers-for-kubernetes-d5049989ab12)
+
+#### Building services - strategies
 - [Blog - Libraries for gRPC Services](https://www.bugsnag.com/blog/libraries-for-grpc-services)
 - [Blog - How Namely builds gRPC Services](https://medium.com/namely-labs/how-we-build-grpc-services-at-namely-52a3ae9e7c35)

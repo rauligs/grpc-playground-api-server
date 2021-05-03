@@ -16,23 +16,23 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class GrpcPlaygroundApiServiceTest {
 
     @Inject
-    private GrpcPlaygroundApiServerServiceGrpc.GrpcPlaygroundApiServerServiceBlockingStub grpcPlaygroundServiceClient;
+    private GreetingServerServiceGrpc.GreetingServerServiceBlockingStub messageServiceClient;
 
     @Test
     void messageService_shouldReturnExpectedResponse_forAGivenName() {
-        String message = grpcPlaygroundServiceClient
-            .send(GrpcPlaygroundApiServerRequest.newBuilder().setName("Peter").build())
+        String message = messageServiceClient
+            .send(GreetingRequest.newBuilder().setName("Peter").build())
             .getMessage();
 
-        assertEquals("Peter, you have just made a gRPC call", message);
+        assertEquals("Peter, hi! you have just made a gRPC call", message);
     }
 }
 
 @Factory
 class GrpcPlaygroundApiServiceClient {
     @Bean
-    GrpcPlaygroundApiServerServiceGrpc.GrpcPlaygroundApiServerServiceBlockingStub blockingStub(
+    GreetingServerServiceGrpc.GreetingServerServiceBlockingStub blockingStub(
         @GrpcChannel(GrpcServerChannel.NAME) ManagedChannel channel) {
-        return GrpcPlaygroundApiServerServiceGrpc.newBlockingStub(channel);
+        return GreetingServerServiceGrpc.newBlockingStub(channel);
     }
 }
