@@ -1,7 +1,7 @@
 package com.playground.api;
 
-import grpc.health.v1.GrpcHealtchCheck;
-import grpc.health.v1.GrpcHealtchCheck.HealthCheckResponse.ServingStatus;
+import grpc.health.v1.HealthCheck;
+import grpc.health.v1.HealthCheck.HealthCheckResponse.ServingStatus;
 import grpc.health.v1.HealthGrpc;
 import io.grpc.ManagedChannel;
 import io.micronaut.context.annotation.Bean;
@@ -24,7 +24,7 @@ class GrpcHealthCheckTest {
     @Test
     void healthCheck_shouldReturnExpectedServingStatus() {
         ServingStatus servingStatus =
-            grpcHealthCheckClient.check(GrpcHealtchCheck.HealthCheckRequest.newBuilder().build()).getStatus();
+            grpcHealthCheckClient.check(HealthCheck.HealthCheckRequest.newBuilder().build()).getStatus();
 
         assertEquals(ServingStatus.SERVING, servingStatus);
     }
@@ -32,7 +32,7 @@ class GrpcHealthCheckTest {
     @Test
     void healthWatch_shouldReturnExpectedServingStatus() {
         ServingStatus servingStatus =
-            grpcHealthCheckClient.check(GrpcHealtchCheck.HealthCheckRequest.newBuilder().build()).getStatus();
+            grpcHealthCheckClient.check(HealthCheck.HealthCheckRequest.newBuilder().build()).getStatus();
 
         assertEquals(ServingStatus.SERVING, servingStatus);
     }
